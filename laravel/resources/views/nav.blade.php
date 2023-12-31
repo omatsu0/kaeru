@@ -6,7 +6,7 @@
 
     @guest
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('register') }}">ユーザー登録</a> 
+      <a class="nav-link" href="{{ route('register') }}">ユーザー登録</a>
     </li>
     @endguest
 
@@ -15,10 +15,10 @@
       <a class="nav-link" href="{{ route('login') }}">ログイン</a>
     </li>
     @endguest
-      
+
     @auth
     <li class="nav-item">
-      <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
+      <a class="nav-link" href="{{ route('articles.create') }}"><i class="fas fa-pen mr-1"></i>投稿する</a> {{--この行のhref属性を変更--}}
     </li>
     @endauth
     
