@@ -1,28 +1,28 @@
 <nav class="navbar navbar-expand navbar-dark blue-gradient">
 
-  <a class="navbar-brand" href="/"><i class="far fa-sticky-note mr-1"></i>memo</a>
+  <a class="navbar-brand" href="/"><i class="far fa-sticky-note mr-1"></i>Memo</a>
 
   <ul class="navbar-nav ml-auto">
 
-  @guest 
+    @guest {{--この行を追加--}}
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('register') }}">ユーザー登録</a>
+      <a class="nav-link" href="{{ route('register') }}">ユーザー登録</a> {{--この行を変更--}}
     </li>
-  @endguest
+    @endguest {{--この行を追加--}}
 
-  @guest
+    @guest {{--この行を追加--}}
     <li class="nav-item">
       <a class="nav-link" href="">ログイン</a>
     </li>
-  @endguest 
-
-  @auth 
+    @endguest {{--この行を追加--}}
+      
+    @auth {{--この行を追加--}}
     <li class="nav-item">
       <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
     </li>
-  @endauth 
-
-  @auth 
+    @endauth {{--この行を追加--}}
+    
+    @auth {{--この行を追加--}}
     <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -40,11 +40,11 @@
         </button>
       </div>
     </li>
-    <form id="logout-button" method="POST" action="">
-    @csrf 
+    <form id="logout-button" method="POST" action="{{ route('logout') }}"> {{--この行を編集--}}
+      @csrf {{--この行を追加--}}
     </form>
     <!-- Dropdown -->
-    @endauth
+    @endauth {{--この行を追加--}}
 
   </ul>
 
